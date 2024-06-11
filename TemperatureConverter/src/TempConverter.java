@@ -15,5 +15,6 @@ public class TempConverter {
 		System.out.println("you gave me " + faren + " degrees is Farenheit\nyour temperature in Celsius is " + 
 		cel + " degrees\nyour temperature in Kelvin is " + kel + " degrees");
 	}
+	
 
 }
