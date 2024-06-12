@@ -14,7 +14,7 @@ public class InteractiveGreeter {
 		System.out.println("how old are you? (format numarically)");
 		int age = scn.nextInt();
 		System.out.println(age);
-		System.out.println("Hello " + name + " from " + place + "you are " + age + " years old");
+		System.out.println("Hello " + name + " from " + place + " you are " + age + " years old");
 		System.out.println("what is your favorite activity?");
 		String act = scn.next();
 		System.out.println(act);
