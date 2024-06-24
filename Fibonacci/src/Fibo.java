@@ -11,6 +11,9 @@ public class Fibo {
 		whilefib(fibNum);
 		System.out.println("for loop");
 		forFib(fibNum);
+		
+		System.out.println("recursion");
+		System.out.println(recursFib(fibNum));
 	}
 	
 	public static void whilefib(int fibNum) {
@@ -44,5 +47,11 @@ public class Fibo {
 			num1 = sum;
 			System.out.println(num1);
 		}
+	}
+	
+	public static int recursFib(int fibNum) {
+		if(fibNum <= 1) return fibNum;
+		
+		return recursFib(fibNum -1) + recursFib(fibNum -2);
 	}
 }
