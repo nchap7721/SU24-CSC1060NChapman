@@ -3,30 +3,32 @@ public class Time {
 
 	private int hour;
 	private int minute;
-	private int second;
-	private String amPm;
+	private double second;
+	
 
 	public Time() {
 		this.hour = 00;
 		this.minute = 00;
-		this.second = 00;
-		this.amPm = null;
+		this.second = 00.0;
 	}
 
-	public Time(int hour, int minute, int second, String amPm) {
+	public Time(int hour, int minute, double second) {
 		this.hour = hour;
 		this.minute = minute;
 		this.second = second;
-		this.amPm = amPm;
-
+	
 	}
-
-	public String getAmPm() {
-		return amPm;
+	
+	public void sHour(int hour) {
+		this.hour = hour;
 	}
-
-	public void setAmPm(String amPm) {
-		this.amPm = amPm;
+	
+	public void sMinute(int minute) {
+		this.minute = minute;
+	}
+	
+	public void sSecond(double second) {
+		this.second = second;
 	}
 
 	public int getHour() {
@@ -49,37 +51,14 @@ public class Time {
 		return second;
 	}
 
-	public void setSecond(int second) {
+	public void setSecond(double second) {
 		this.second = second;
 	}
 
-	public int adj() {
-		if (second > 59) {
-			int sMax = second / 60;
-			second = second - (sMax * 60);
-			minute = minute + sMax;
-		}
-		if (minute > 59) {
-			int mMax = minute / 60;
-			minute = minute - (mMax * 60);
-			hour = hour + mMax;
-		}
-		if (hour > 12) {
-			int hMax = hour / 12;
-			hour = hour - (hMax * 12);
-			if (hMax % 2 == 1) {
-				amPm = "Pm";
-			}
-		}
-		int newH = hour; 
-		int newM = minute;
-		int newS = second;
-		return newH, newM, newS;
-	}
 
 	@Override
 	public String toString() {
-		return hour + ":" + minute + ":" + second + "" + amPm;
+		return hour + ":" + minute + ":" + second;
 	}
 
 }
