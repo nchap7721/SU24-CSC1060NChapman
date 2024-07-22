@@ -7,6 +7,7 @@ public class Time {
 	
 
 	public Time() {
+		//new Time();
 		this.hour = 00;
 		this.minute = 00;
 		this.second = 00.0;
@@ -55,7 +56,18 @@ public class Time {
 		this.second = second;
 	}
 
-
+	public void print(boolean military) {
+		if(military == false) {
+			if (hour > 12) {
+				System.out.println((hour - 12) + ":" + minute + ":" + second + "PM");
+			}else {
+			System.out.println(hour + ":" + minute + ":" + second + "AM");
+			}
+		}else {
+		System.out.println(hour + ":" + minute + ":" + second);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return hour + ":" + minute + ":" + second;
