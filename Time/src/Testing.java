@@ -3,20 +3,22 @@ public class Testing {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Time t1 = new Time(3, 45, 35.0);
+		Time t1 = new Time(3, 45, 35.0, "Am");
 		printTime(t1);
-		Time t2 = new Time(17, 30, 30.0);
+		Time t2 = new Time(17, 30, 30.0, "Pm");
 		printTime(t2);
 		adding(t1, t2);
 		formatting(t1);
 		printTime(t1);
 		String x = "Am";
-		
+		change(t1, x);
+		printTime(t1);
+		System.out.println(x);
 	}
 	
 	public static void printTime(Time t1) {
 		System.out.printf("%02d:%02d:%04.1f\n" , 
-				t1.getHour(), t1.getMinute(), t1.getSecond());
+				t1.getHour(), t1.getMinute(), t1.getSecond(), t1.getAmPm());
 	}
 
 	public boolean equals(Time t1, Time t2) {

@@ -4,6 +4,7 @@ public class Time {
 	private int hour;
 	private int minute;
 	private double second;
+	private String AmPm;
 	
 
 	public Time() {
@@ -11,15 +12,25 @@ public class Time {
 		this.hour = 00;
 		this.minute = 00;
 		this.second = 00.0;
+		this.AmPm = null;
 	}
 
-	public Time(int hour, int minute, double second) {
+	public Time(int hour, int minute, double second, String AmPm) {
 		this.hour = hour;
 		this.minute = minute;
 		this.second = second;
+		this.AmPm = AmPm;
 	
 	}
 	
+	public String getAmPm() {
+		return AmPm;
+	}
+
+	public void setAmPm(String amPm) {
+		AmPm = amPm;
+	}
+
 	public void sHour(int hour) {
 		this.hour = hour;
 	}
