@@ -4,21 +4,20 @@ public class Testing {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Time t1 = new Time(3, 45, 35.0, "Am");
-		printTime(t1);
+		printWith(t1);
 		Time t2 = new Time(17, 30, 30.0, "Pm");
-		printTime(t2);
+		printWith(t2);
 		adding(t1, t2);
 		formatting(t1);
-		printTime(t1);
-		String x = "Am";
-		change(t1, x);
-		printTime(t1);
-		System.out.println(x);
+		printWith(t1);
+		change(t1);
+		printWith(t1);
 	}
 	
-	public static void printTime(Time t1) {
-		System.out.printf("%02d:%02d:%04.1f\n" , 
-				t1.getHour(), t1.getMinute(), t1.getSecond(), t1.getAmPm());
+	public static void printWith(Time t1) {
+		System.out.println(t1.getHour() + ":" + t1.getMinute() 
+		+ ":" + t1.getSecond() + " " + t1.getAmPm());
+		
 	}
 
 	public boolean equals(Time t1, Time t2) {
@@ -50,14 +49,14 @@ public class Testing {
 		}
 	}
 	
-	public static void change(Time t1, String x) {
+	public static void change(Time t1) {
 		if(t1.getHour() > 12) {
 			int halfDay = t1.getHour() / 12;
 			if(halfDay % 2 == 1) {
-				x = "Am";
+				t1.setAmPm("Am");
 			}
 			if(halfDay % 2 == 0) {
-				x = "Pm";
+				t1.setAmPm("Pm");
 			}
 		}
 	}
