@@ -117,7 +117,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		}
 
 		if (!running) {
-			timer.stop();
+			//timer.stop();
 		}
 	}
 
